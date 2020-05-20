@@ -1,0 +1,104 @@
+/* roboto-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('../fonts/roboto-v20-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff'); /* Modern Browsers */
+  font-display: swap;
+}
+
+/* roboto-700 - latin_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('../fonts/roboto-v20-latin_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-v20-latin_cyrillic-700.woff') format('woff'); /* Modern Browsers */
+  font-display: swap;
+}
+/* roboto-900 - latin_cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'),
+       url('../fonts/roboto-v20-latin_cyrillic-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-v20-latin_cyrillic-900.woff') format('woff'); /* Modern Browsers */
+  font-display: swap;
+}
+
+html {
+	box-sizing: border-box; /*атрибут для изм-я размера блоков, его значение - чтобы размеры блока уже включали в себя высоту и ширину, но не включали margin*/
+	min-width: 320px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit; /*видимо чтобы все элементы наследовали свойства атрибута размеров у родителя?*/
+}
+
+body {
+	min-width: 320px; /*задаем мин. ширину для появления ползунка (когда сжимают окно менее этого значения)*/
+	margin: 0; /*обнуляем границы, установленные по умолчанию. Кстати это же лишнее, у меня же в normalize это уже сделано?*/
+	background-color: #fff; /*цвет фона*/
+	font-family: "Roboto"; /*семейство шрифтов*/
+	font-weight: 400;
+	font-size: 20px; /*размер шрифта по умолчанию для body*/
+	line-height: 30px;/*задает высоту строки текста*/
+	color: #8993ad; /*цвет текста*/
+}
+
+body.modal-active {
+	overflow: hidden; /*К сожалению, не нашел что такое .modal-active, это просто класс?*/
+}                     /*Отображение области внутри элемента, остальное скрывается*/
+
+img {
+	max-width: 100%; /*ну смысл понятен - макс. ширина, но он тут видимо в каком-то контексте, суть которого мне пока неясна*/
+}
+
+a {
+	text-decoration: none; /*отмена всех эффектов в т.ч. подчеркивания*/
+	color: inherit; /*наследование свойства у родителя*/
+}
+
+
+.visually-hidden {
+	position: absolute !important;               /*др. элементы отображ-ся словно этого элемента нет. Important - для задания приоритета в случае противоречивости стилей*/
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px); /*задание области элемента, которая будет видна*/
+	padding:0 !important; /*внутренние отступы, границы и размеры*/
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden; /**/
+}
+
+.clearfix::after { /*распорка чтобы колонки с флоатом не выпадали из родителя*/
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.fixed-container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+a:hover {
+	color: #fc557c;
+	border-bottom: 1px solid;
+	transition: 0.3s;
+}
+
+@media (max-width: 1250px) {
+	.fixed-container {
+		max-width: 945px;
+	}
+
+
+}
